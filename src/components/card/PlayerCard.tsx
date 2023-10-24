@@ -1,6 +1,7 @@
 import Stats from "./texts/Stats";
 import Name from "./texts/Name";
 import Overall from "./texts/Overall";
+import Logos from "./logos/Logos";
 
 export const getPlayerIndex = (data: Array<any>, name: string) => {
   let result = -1;
@@ -36,6 +37,7 @@ const PlayerCard: React.FC<Props> = ({data, player}) => {
             : []
         }
       />
+      <Logos />
     </div>
   );
 };

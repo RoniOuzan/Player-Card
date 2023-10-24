@@ -1,4 +1,3 @@
-import "./PlayerCard.scss";
 import Stats from "./texts/Stats";
 import Name from "./texts/Name";
 import Overall from "./texts/Overall";
@@ -21,7 +20,7 @@ interface Props {
 const PlayerCard: React.FC<Props> = ({data, player}) => {
   return (
     <div style={{ position: "relative" }}>
-      <img src="src\images\cards\DefaultCard.png" draggable={false} />
+      <img src= "images\cards\DefaultCard.png" draggable={false} />
       <Overall
         data={
           data && getPlayerIndex(data, player) >= 0

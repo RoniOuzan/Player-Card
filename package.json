@@ -1,12 +1,13 @@
 {
-  "homepage": "https://roniouzan.github.io/Player-Card/",
   "name": "player-card",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build --output-dir dist",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
+    "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

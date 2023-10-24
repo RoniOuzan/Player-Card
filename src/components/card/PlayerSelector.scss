@@ -1,0 +1,13 @@
+.PlayerSelector {
+  position: absolute;
+  top: 100px;
+  width: 300px;
+}
+
+.PlayerSelector .ant-select-item-option-selected {
+  background-color: #141414;
+}
+
+.PlayerSelector .ant-select-item-option-active {
+  background-color: #F5D409;
+}

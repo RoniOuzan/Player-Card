@@ -1,9 +1,13 @@
 @font-face {
   font-family: "Regular-Font";
-  src: url("./components/fonts/Regular-Font.ttf");
+  src: url("./components/card/fonts/Regular-Font.ttf");
 }
 
 @font-face {
   font-family: "Bold-Font";
-  src: url("./components/fonts/Bold-Font.ttf");
+  src: url("./components/card/fonts/Bold-Font.ttf");
+}
+
+body {
+  background-color: #141414;
 }

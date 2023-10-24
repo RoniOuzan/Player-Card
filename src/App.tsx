@@ -1,7 +1,7 @@
-import PlayerCard from "./components/PlayerCard";
+import Canvas from "./components/Canvas";
 
 function App() {
-  return <PlayerCard />;
+  return <Canvas />;
 }
 
 export default App;

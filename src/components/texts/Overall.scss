@@ -1,0 +1,17 @@
+.Overall {
+  position: absolute;
+  width: 19%;
+  top: 12%;
+  left: 7%;
+  font-Family: Bold-Font;
+  color:#393218; 
+  font-Weight: bold;
+  &__Rating {
+    font-Size: 50px;
+    text-Align: left;
+  }
+  &__Position {
+    font-Size: 32px;
+    text-Align: center;
+  }
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Regular-Font";
+  src: url("./components/fonts/Regular-Font.ttf");
+}
+
+@font-face {
+  font-family: "Bold-Font";
+  src: url("./components/fonts/Bold-Font.ttf");
+}

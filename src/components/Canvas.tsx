@@ -31,7 +31,9 @@ const Canvas = () => {
     <div className="Canvas">
       <PlayerSelector data={data} setPlayer={setPlayer} />
       <br></br>
-      <PlayerCard data={data} player={player} />
+      <div style={{alignItems: "center"}}>
+        <PlayerCard data={data} player={player} />
+      </div>
     </div>
   </div>;
 }

@@ -2,7 +2,7 @@ import "./Title.scss";
 
 const Title = () => {
   return <div className="Title">
-    Player Card
+    Vassileague - Player Card
   </div>;
 }
 

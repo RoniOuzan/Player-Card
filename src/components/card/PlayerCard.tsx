@@ -16,12 +16,13 @@ export const getPlayerIndex = (data: Array<any>, name: string) => {
 
 interface Props {
   data: any;
-  player: string
+  player: string;
+  width: number;
 }
 
-const PlayerCard: React.FC<Props> = ({data, player}) => {
+const PlayerCard: React.FC<Props> = ({data, player, width}) => {
   return (
-    <div className="PlayerCard">
+    <div className="PlayerCard" style={{width: width}}>
       <img src= "images\cards\DefaultCard.png" draggable={false} style={{width: "100%"}} />
       <Overall
         data={
@@ -29,14 +30,16 @@ const PlayerCard: React.FC<Props> = ({data, player}) => {
             ? data[getPlayerIndex(data, player)]
             : []
         }
+        width={width}
       />
-      <Name name={player} />
+      <Name name={player} width={width} />
       <Stats
         stats={
           data && getPlayerIndex(data, player) >= 0
             ? data[getPlayerIndex(data, player)]
             : []
         }
+        width={width}
       />
       <Logos />
     </div>

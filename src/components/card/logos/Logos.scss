@@ -1,11 +1,13 @@
 .Logos {
+  display: flex;
   position: absolute;
   height: 6%;
   width: 40%;
-  left: 30%;
+  left: 28%;
   top: 87%;
+  justify-content: center;
 }
 
 .Logo {
-  height: 3.1vh;
+  height: 100%;
 }

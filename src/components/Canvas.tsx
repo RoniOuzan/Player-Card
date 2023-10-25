@@ -30,6 +30,7 @@ const Canvas = () => {
     <Title />
     <div className="Canvas">
       <PlayerSelector data={data} setPlayer={setPlayer} />
+      <br></br>
       <PlayerCard data={data} player={player} />
     </div>
   </div>;

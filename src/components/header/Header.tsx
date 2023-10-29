@@ -14,7 +14,7 @@ const Header: React.FC<Props> = ({ open, setOpen }) => {
       <Flex justify="flex-start" align="center" gap={10}>
         <br></br>
         <Button type="text" onClick={() => setOpen(!open)}>
-          {open ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          {open ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
         </Button>
         <div className="Title">
           Vassileague - Player Card

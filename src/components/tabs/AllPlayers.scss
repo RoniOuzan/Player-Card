@@ -2,6 +2,15 @@
   display: flex;
   flex-wrap: wrap;  
   justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0px;
+}
+
+.Loading {
+  position: relative;
+  font-family: Bold-Font;
+  font-size: 50px;
+  color: white;
+  padding-left: 20px;
 }

@@ -5,7 +5,7 @@ interface Props {
   height: number;
 }
 
-const Stats: React.FC<Props> = ({ name, height }) => {
+const Name: React.FC<Props> = ({ name, height }) => {
   return (
     <div className="Name">
       <div style={{ width: "100%", fontSize: (22 / 0.6875) * (height / 500) + "px" }}>{name}</div>
@@ -13,4 +13,4 @@ const Stats: React.FC<Props> = ({ name, height }) => {
   );
 };
 
-export default Stats;
+export default Name;

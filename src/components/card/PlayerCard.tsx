@@ -36,7 +36,7 @@ const PlayerCard: React.FC<Props> = ({ data, player, height }) => {
         }
         height={height}
       />
-      <Name name={player} height={height} />
+      <Name name={data[getPlayerIndex(data, player)] != undefined ? player : ""} height={height} />
       <Stats
         stats={
           data && getPlayerIndex(data, player) >= 0

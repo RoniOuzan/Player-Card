@@ -4,9 +4,10 @@ import "./PlayerSelector.scss";
 interface Props {
   data: Array<any>;
   setPlayer: (player: string) => void;
+  open: boolean;
 }
 
-const PlayerSelector: React.FC<Props> = ({data, setPlayer}) => {
+const PlayerSelector: React.FC<Props> = ({data, setPlayer, open}) => {
   let options: Array<any> = [];
   if (data) {
     data.forEach((element, index) => {
@@ -20,7 +21,7 @@ const PlayerSelector: React.FC<Props> = ({data, setPlayer}) => {
   }
 
   return (
-    <div className="PlayerSelector">
+    <div className="PlayerSelector" style={{width: (open && window.innerWidth < 1000) ? "148px" : "254px"}}>
       <div style={{color: "#F5D409", fontFamily: "Bold-Font"}}>
         Enter a player:
       </div>

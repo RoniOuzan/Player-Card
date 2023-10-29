@@ -5,15 +5,16 @@ import "./PlayerPreview.scss";
 
 interface Props {
   data: any;
+  open: boolean;
 }
 
-const PlayerPreview: React.FC<Props> = ({ data }) => {
+const PlayerPreview: React.FC<Props> = ({ data, open }) => {
   const [player, setPlayer] = useState("");
 
   return (
     <div className="PlayerPreview">
-      <PlayerSelector data={data} setPlayer={setPlayer} />
-      <PlayerCard data={data} player={player} height={500} />
+      <PlayerSelector data={data} setPlayer={setPlayer} open={open} />
+      <PlayerCard data={data} player={player} height={(open && window.innerWidth < 1000) ? 350 : 500} />
     </div>
   );
 } 

@@ -13,7 +13,7 @@ const Canvas: React.FC<Props> = ({ data, open }) => {
   const [activeKey, setActiveKey] = useState('all');
 
   const allPlayers = <AllPlayers data={data} />;
-  const playerPreview = <PlayerPreview data={data} />;
+  const playerPreview = <PlayerPreview data={data} open={open} />;
 
   const getActiveContent = () => {
     switch (activeKey) {
@@ -29,7 +29,7 @@ const Canvas: React.FC<Props> = ({ data, open }) => {
   return (
     <div className="Tabs">
       {open && (
-        <Tabs 
+        <Tabs   
           style={{ height: "100%" }}
           tabPosition="left"
           activeKey={activeKey}

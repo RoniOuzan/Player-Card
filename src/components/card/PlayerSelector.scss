@@ -1,7 +1,8 @@
 .PlayerSelector {
-  position: absolute;
-  top: 100px;
-  width: 300px;
+  position: relative;
+  width: 254px;
+  height: 100px;
+  background-color: red;
 }
 
 .PlayerSelector .ant-select-item-option-selected {

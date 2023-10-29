@@ -19,20 +19,22 @@ const PlayerSelector: React.FC<Props> = ({data, setPlayer}) => {
     });
   }
 
-  return <div className="PlayerSelector">
-    <div style={{color: "#F5D409", fontFamily: "Bold-Font"}}>
-      Enter a player:
+  return (
+    <div className="PlayerSelector">
+      <div style={{color: "#F5D409", fontFamily: "Bold-Font"}}>
+        Enter a player:
+      </div>
+      <AutoComplete 
+        placeholder="Player Name"
+        options={options}
+        onChange={setPlayer}
+        style={{
+          width: "100%",
+          color: "red",
+        }}
+      />
     </div>
-    <AutoComplete 
-      placeholder="Player Name"
-      options={options}
-      onChange={setPlayer}
-      style={{
-        width: "100%",
-        color: "red",
-      }}
-    />
-  </div>;
+  );
 }
 
 export default PlayerSelector;

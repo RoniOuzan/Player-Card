@@ -1,51 +1,56 @@
-import { useEffect, useState } from "react";
-import PlayerCard from "./card/PlayerCard";
-import PlayerSelector from "./card/PlayerSelector";
-import Title from "./Title";
+import { useState } from "react";
+import AllPlayers from "./tabs/AllPlayers";
+import PlayerPreview from "./tabs/PlayerPreview";
+import { Tabs } from "antd";
 import "./Canvas.scss";
-import { Flex } from "antd";
 
-const Canvas = () => {
-  const [data, setData] = useState<any>(null);
+interface Props {
+  data: any;
+  open: boolean;
+}
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "https://script.googleusercontent.com/macros/echo?user_content_key=AZinsGsKky8REsWBIi8jdB_Tm46iZFVb2vNA_uDVPUhbLryPwIi_oFylbXk7SElDTJWRfl-dyWfudBw5arhnruU-jqXf3oMZm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIvIcNl3-ppA_LsZpAAc14FyLfQeMnuZ2eCX22hIQdpuSGeAqgwuyo1Z3AGUuBTHDiD3zKV1UU3ppa5aMDpg1gBfZ8Yj2iis8Q&lib=MjB8_6ZTx14QmfFZF3lhvWEIQqeymobcZ"
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const jsonData = await response.json();
-      setData(jsonData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
+const Canvas: React.FC<Props> = ({ data, open }) => {
+  const [activeKey, setActiveKey] = useState('all');
+
+  const allPlayers = <AllPlayers data={data} />;
+  const playerPreview = <PlayerPreview data={data} />;
+
+  const getActiveContent = () => {
+    switch (activeKey) {
+      case 'all':
+        return allPlayers;
+      case 'preview':
+        return playerPreview;
+      default:
+        return <></>;
     }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const [player, setPlayer] = useState("");
+  }
 
   return (
-    <div>
-      <Title />
-      <div className="Canvas" >
-        {/* <PlayerSelector data={data} setPlayer={setPlayer} />
-        <br></br>
-        <div style={{ alignItems: "center" }}>
-          <PlayerCard data={data} player={player} height={500} />
-        </div> */}
-        <div className="Players">
-          {data && Object.entries(data).map(([index]) => (
-            <PlayerCard data={data} player={data[index]["Player"]} height={192} />
-          ))}
-        </div>
-      </div>
+    <div className="Tabs">
+      {open && (
+        <Tabs 
+          style={{ height: "100%" }}
+          tabPosition="left"
+          activeKey={activeKey}
+          onChange={setActiveKey}
+          items={[
+            {
+              label: "All Players",
+              key: "all",
+              children: allPlayers
+            },
+            {
+              label: "Player-Preview",
+              key: "preview",
+              children: playerPreview
+            }
+          ]}
+        />
+      )}
+      {getActiveContent()}
     </div>
   );
-};
+}
 
 export default Canvas;

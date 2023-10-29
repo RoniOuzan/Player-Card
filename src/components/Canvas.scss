@@ -1,5 +1,11 @@
 .Canvas {
+  position: absolute;
+  height: 94%;
+  bottom: 0px;
+  background-color: red;
+}
+
+.Players {
   display: flex;
-  justify-content: center;
-  height: 90vh;
+  flex-wrap: wrap;  
 }

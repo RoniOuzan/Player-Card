@@ -1,9 +1,9 @@
 import "./Title.scss";
 
 const Title = () => {
-  return <div className="Title">
+  return <header className="Title">
     Vassileague - Player Card
-  </div>;
+  </header>;
 }
 
 export default Title;

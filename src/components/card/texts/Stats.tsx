@@ -4,20 +4,22 @@ import "./Stats.scss";
 
 interface Props {
   stats: any;
-  width: number;
+  height: number;
 }
 
-const Stats: React.FC<Props> = ({stats, width}) => {
-  return <div className="Stats">
-    <Flex justify="space-evenly">
-      <Stat name="PAC" rating={stats["Pace"]} width={width} />
-      <Stat name="SHO" rating={stats["Shooting"]} width={width} />
-      <Stat name="PAS" rating={stats["Passing"]} width={width} />
-      <Stat name="DRI" rating={stats["Dribbling"]} width={width} />
-      <Stat name="DEF" rating={stats["Defending"]} width={width} />
-      <Stat name="PHY" rating={stats["Physicality"]} width={width} />
-    </Flex>
-  </div>;  
-}
+const Stats: React.FC<Props> = ({ stats, height }) => {
+  return (
+    <div className="Stats">
+      <Flex justify="space-evenly">
+        <Stat name="PAC" rating={stats["Pace"]} height={height} />
+        <Stat name="SHO" rating={stats["Shooting"]} height={height} />
+        <Stat name="PAS" rating={stats["Passing"]} height={height} />
+        <Stat name="DRI" rating={stats["Dribbling"]} height={height} />
+        <Stat name="DEF" rating={stats["Defending"]} height={height} />
+        <Stat name="PHY" rating={stats["Physicality"]} height={height} />
+      </Flex>
+    </div>
+  );
+};
 
 export default Stats;

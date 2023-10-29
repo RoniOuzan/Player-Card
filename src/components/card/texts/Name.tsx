@@ -2,13 +2,15 @@ import "./Name.scss";
 
 interface Props {
   name: string;
-  width: number;
+  height: number;
 }
 
-const Stats: React.FC<Props> = ({name, width}) => {
-  return <div className="Name">
-    <div style={{width: "100%", fontSize: 200*width/330 + "%"}}>{name}</div>
-  </div>;  
-}
+const Stats: React.FC<Props> = ({ name, height }) => {
+  return (
+    <div className="Name">
+      <div style={{ width: "100%", fontSize: (22 / 0.6875) * (height / 500) + "px" }}>{name}</div>
+    </div>
+  );
+};
 
 export default Stats;

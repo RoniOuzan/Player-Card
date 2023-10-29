@@ -2,14 +2,26 @@ import "./Overall.scss";
 
 interface Props {
   data: any;
-  width: number;
+  height: number;
 }
 
-const Overall: React.FC<Props> = ({data, width}) => {
-  return <div className="Overall">
-    <div className="Overall__Rating" style={{fontSize: 312.5*width/330 + "%"}} >{data["Overall"]}</div>
-    <div className="Overall__Position" style={{fontSize: 200*width/330 + "%"}} >{data["Position"]}</div>
-  </div>
-}
+const Overall: React.FC<Props> = ({ data, height }) => {
+  return (
+    <div className="Overall">
+      <div
+        className="Overall__Rating"
+        style={{ fontSize: (34 / 0.6875) * (height / 500) + "px" }}
+      >
+        {data["Overall"]}
+      </div>
+      <div
+        className="Overall__Position"
+        style={{ fontSize: (22 / 0.6875) * (height / 500) + "px" }}
+      >
+        {data["Position"]}
+      </div>
+    </div>
+  );
+};
 
 export default Overall;

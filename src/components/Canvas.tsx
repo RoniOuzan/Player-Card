@@ -26,27 +26,28 @@ const Canvas: React.FC<Props> = ({ data, open }) => {
     }
   }
 
+  const tabs = [
+    {
+      label: "All Players",
+      key: "all",
+      children: allPlayers
+    },
+    {
+      label: "Player-Preview",
+      key: "preview",
+      children: playerPreview
+    }
+  ]
+
   return (
     <div className="Tabs">
       {open && (
-        <Tabs   
+        <Tabs
           style={{ height: "100%" }}
           tabPosition="left"
           activeKey={activeKey}
           onChange={setActiveKey}
-          items={[
-            {
-              label: "All Players",
-              key: "all",
-              children: allPlayers
-            },
-            {
-              label: "Player-Preview",
-              key: "preview",
-              children: playerPreview
-            }
-          ]}
-        />
+          items={tabs} />
       )}
       {getActiveContent()}
     </div>

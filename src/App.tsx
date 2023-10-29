@@ -1,7 +1,7 @@
-import Canvas from "./components/Canvas";
+import Board from "./components/Board";
 
 function App() {
-  return <Canvas />;
+  return <Board />;
 }
 
 export default App;

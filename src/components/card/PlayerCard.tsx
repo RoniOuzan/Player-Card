@@ -16,27 +16,34 @@ export const getPlayerIndex = (data: Array<any>, name: string) => {
 
 interface Props {
   data: any;
-  player: string
+  player: string;
+  height: number;
 }
 
-const PlayerCard: React.FC<Props> = ({data, player}) => {
+const PlayerCard: React.FC<Props> = ({ data, player, height }) => {
   return (
-    <div className="PlayerCard">
-      <img src= "images\cards\DefaultCard.png" draggable={false} style={{width: "100%"}} />
+    <div className="PlayerCard" style={{ height: height }}>
+      <img
+        src="images\cards\DefaultCard.png"
+        draggable={false}
+        style={{ height: "100%" }}
+      />
       <Overall
         data={
           data && getPlayerIndex(data, player) >= 0
             ? data[getPlayerIndex(data, player)]
             : []
         }
+        height={height}
       />
-      <Name name={player} />
+      <Name name={player} height={height} />
       <Stats
         stats={
           data && getPlayerIndex(data, player) >= 0
             ? data[getPlayerIndex(data, player)]
             : []
         }
+        height={height}
       />
       <Logos />
     </div>
